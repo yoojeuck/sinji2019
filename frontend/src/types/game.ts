@@ -8,39 +8,60 @@ export type Stage =
   | 'rolling'
   | 'score';
 
-export interface Ingredient {
-  id: string;
-  name: string;
+export interface RhythmNoteData {
+  id: number;
+  lane: number;
+  beatTime: number; // ms from stage start
+}
+
+export interface ActiveNote extends RhythmNoteData {
+  status: 'pending' | 'hit-perfect' | 'hit-good' | 'miss';
+}
+
+export interface HitFeedback {
+  type: 'perfect' | 'good' | 'miss';
+  lane: number;
+  id: number;
+}
+
+export interface LaneConfig {
+  label: string;
   emoji: string;
-  unit: string;
-  targetAmount: number;
-  minAmount: number;
-  maxAmount: number;
   color: string;
+  key: string;
+}
+
+export interface StageConfig {
+  stageKey: Stage;
+  title: string;
+  description: string;
+  lanes: LaneConfig[];
+  notes: RhythmNoteData[];
+  accentColor: string;
 }
 
 export interface StageScore {
   stage: Stage;
-  score: number;
-  maxScore: number;
   label: string;
+  score: number;
+  perfect: number;
+  good: number;
+  miss: number;
 }
 
 export interface GameState {
   currentStage: Stage;
   stageScores: StageScore[];
   totalScore: number;
-  ingredientAmounts: Record<string, number>;
 }
-
-export type GameAction =
-  | { type: 'NEXT_STAGE' }
-  | { type: 'SET_INGREDIENT'; id: string; amount: number }
-  | { type: 'COMPLETE_STAGE'; stage: Stage; score: number }
-  | { type: 'RESTART' };
 
 export interface ScoreEntry {
   name: string;
   score: number;
   date: string;
 }
+
+export type GameAction =
+  | { type: 'COMPLETE_STAGE'; stage: Stage; score: number; perfect: number; good: number; miss: number }
+  | { type: 'NEXT_STAGE' }
+  | { type: 'RESTART' };
