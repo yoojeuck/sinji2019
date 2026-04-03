@@ -14,7 +14,7 @@ export const STAGE_CONFIGS: StageConfig[] = [
     stageKey: 'ingredient',
     title: '🌾 재료 배합',
     description: '재료가 떨어질 때 맞춰 눌러요! (키보드: D F J K)',
-    accentColor: '#ff6b9d',
+    accentColor: '#ff6b9d', bpm: 90,
     lanes: [
       { label: '밀가루', emoji: '🌾', color: '#f5e6c8', key: 'D' },
       { label: '달걀',   emoji: '🥚', color: '#ffd700', key: 'F' },
@@ -33,7 +33,7 @@ export const STAGE_CONFIGS: StageConfig[] = [
     stageKey: 'mixing',
     title: '🥣 반죽',
     description: '좌우 교대로 박자에 맞춰 반죽하세요! (D / K)',
-    accentColor: '#e040fb',
+    accentColor: '#e040fb', bpm: 110,
     lanes: [
       { label: '왼손', emoji: '👈', color: '#ce93d8', key: 'D' },
       { label: '오른손', emoji: '👉', color: '#b39ddb', key: 'K' },
@@ -51,7 +51,7 @@ export const STAGE_CONFIGS: StageConfig[] = [
     stageKey: 'baking',
     title: '🔥 굽기',
     description: '최적 타이밍에 정확하게! 느리지만 정밀도가 중요해요 (Space / D)',
-    accentColor: '#ff9800',
+    accentColor: '#ff9800', bpm: 72,
     lanes: [
       { label: '온도 체크', emoji: '🌡️', color: '#ffcc80', key: 'D' },
       { label: '타이머',   emoji: '⏱️', color: '#ffab40', key: 'K' },
@@ -69,7 +69,7 @@ export const STAGE_CONFIGS: StageConfig[] = [
     stageKey: 'cream',
     title: '🍦 크림 휘핑',
     description: '빠르게! 리듬에 맞춰 연속으로 눌러요! (D F J K)',
-    accentColor: '#fff176',
+    accentColor: '#fff176', bpm: 145,
     lanes: [
       { label: '크림', emoji: '🍦', color: '#fffde7', key: 'D' },
       { label: '설탕', emoji: '🍬', color: '#fff9c4', key: 'F' },
@@ -90,7 +90,7 @@ export const STAGE_CONFIGS: StageConfig[] = [
     stageKey: 'spreading',
     title: '🎨 크림 바르기',
     description: '케이크 위에 크림을 골고루! (D F J K)',
-    accentColor: '#69f0ae',
+    accentColor: '#69f0ae', bpm: 100,
     lanes: [
       { label: '왼쪽',   emoji: '◀', color: '#a5d6a7', key: 'D' },
       { label: '중간왼', emoji: '▲', color: '#c8e6c9', key: 'F' },
@@ -110,7 +110,7 @@ export const STAGE_CONFIGS: StageConfig[] = [
     stageKey: 'rolling',
     title: '🌀 케이크 말기',
     description: '클라이맥스! 점점 빨라져요. 끝까지 집중! (D / K)',
-    accentColor: '#40c4ff',
+    accentColor: '#40c4ff', bpm: 120,
     lanes: [
       { label: '안쪽', emoji: '↩', color: '#81d4fa', key: 'D' },
       { label: '바깥', emoji: '↪', color: '#4fc3f7', key: 'K' },

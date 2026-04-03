@@ -38,6 +38,7 @@ export interface StageConfig {
   lanes: LaneConfig[];
   notes: RhythmNoteData[];
   accentColor: string;
+  bpm: number;
 }
 
 export interface StageScore {
